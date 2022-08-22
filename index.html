@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Noise Officer</title>
+  <meta name="description" content="Makina & Hardstyle music by Arnau Llop.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 0 1em;
+    }
+
+    #content {
+      position: relative;
+      padding: 0.5em;
+      z-index: 5555;
+      width: 100%;
+      margin: 0 auto 1em auto;
+      max-width: 400px;
+    }
+
+    .platform-list {
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 0 0 5px 5px;
+      box-shadow: none;
+      background: none;
+    }
+
+    .platforms-list__name {
+      padding: 1.2em 1.5em;
+      letter-spacing: 1px;
+      text-align: center;
+      font-family: 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+      width: 100%;
+      max-width: 40em;
+      font-size: 1em;
+      color: #fff;
+      border-radius: 0;
+      background: none;
+      font-weight: bold;
+      margin: 0.5em 0;
+
+    }
+
+    .platforms-list__container {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    @media(max-width:1100px) {
+      .platforms-list__name {
+        font-size: 1.1em;
+      }
+    }
+
+    @media(max-width:700px) {
+      .platforms-list__name {
+        font-size: 1em;
+      }
+    }
+
+    .music-link__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7em 1em;
+      border-top: 1px solid #f6f6f6;
+      border-bottom: 1px solid #f6f6f6;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .music-link__container:last-child {
+      border-bottom: none;
+    }
+
+    .music-link__text {
+      text-align: center;
+      font-weight: 500;
+      width: 100%;
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    .music-link__logo {
+      float: left;
+      width: 7em;
+    }
+
+    .music-link__custom-platform {
+      float: left;
+      font-size: 1.1em;
+      width: 100%;
+      max-width: 12em;
+      text-align: left;
+      font-family: Arial;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .music-link__button {
+      float: right;
+      padding: 0.5em 1em;
+      background: #fff;
+      color: rgb(97 97 97);
+      border: 1px solid rgb(218 218 218);
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .music-link__button:hover {
+      background: rgb(60, 60, 60);
+      border: 1px solid transparent;
+      color: #fff;
+    }
+
+    /* Ads */
+    .Escoltarto_ad {
+      position: relative;
+      font-family: 'Segoe UI', 'Helvetica', Arial, sans-serif;
+      background: rgb(47, 103, 223);
+      padding: 0.5em 1em;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .Escoltarto_ad b {
+      display: inline-block;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    .Escoltarto_ad p {
+      font-size: 0.85em;
+      color: #fff;
+      opacity: 0.75;
+    }
+
+    .Escoltarto_ad a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .display_ad {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 555;
+    }
+
+    .mmtwrappos {
+      position: relative;
+      z-index: 5;
+      padding: 10px;
+      margin-bottom: 0 !important;
+    }
+
+    /* YouTube Embed */
+    #youtube_video {
+      margin-top: 1em;
+      position: relative;
+      width: 100%;
+      background: #19202b;
+      padding-bottom: 52.1%;
+      /* 16:9 */
+      padding-top: 25px;
+    }
+
+    #youtube_video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #content {
+      max-width: 400px;
+    }
+
+    /* Themes */
+    /* Common to all themes */
+
+    #container {
+      left: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Common to all except classic. Classic overrides this. */
+    #user-artwork {
+      border-radius: 5px;
+    }
+
+    .music-link__container:not(.music-link__container--custom-text):hover {
+      cursor: pointer;
+    }
+
+    #container {
+      position: fixed;
+      overflow: auto;
+      background-color: #1f1f1f;
+      height: 100vh;
+    }
+
+    .music-link__container {
+      border-bottom: unset;
+      border: 2px solid #fff;
+      background: #fff;
+      margin-top: 0.5em;
+    }
+
+    .music-link__container:not(.music-link__container--custom-text):last-child {
+      border-bottom: 2px solid #fff;
+    }
+
+    .music-link__container--custom-text {
+      border: none;
+      background: none;
+    }
+
+    .music-link__text {
+      color: #fff;
+    }
+
+    .music-link__custom-platform {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <div id="bg_container" style="display:none">
+      <img id="bg_img">
+    </div>
+    <div id="content">
+      <img id="user-artwork" src="timemachine.jpg" style="display:block;width:100%;max-width:400px">
+      <div class="platforms-list__container">
+        <div class="platform-list">
+          <div class="music-link__container" data-id="spotify" data-url="https://open.spotify.com/artist/2UuL7R7wCO7DQVWNc5o93k?si=waMrfhCsQzKvcO_mufdsJw">
+            <img class="music-link__logo" src="spotify.svg" alt="spotify">
+            <button class="music-link__button" data-id="spotify" data-url="https://open.spotify.com/artist/2UuL7R7wCO7DQVWNc5o93k?si=waMrfhCsQzKvcO_mufdsJw">Escoltar</button>
+          </div>
+          <div class="music-link__container" data-id="apple" data-url="https://music.apple.com/us/artist/noise-officer/1489358857">
+            <img class="music-link__logo" src="apple-music.svg" alt="apple-music">
+            <button class="music-link__button" data-id="apple" data-url="https://music.apple.com/us/artist/noise-officer/1489358857">Escoltar</button>
+          </div>
+          <!-- div class="music-link__container" data-id="youtube" data-url="https://www.youtube.com/watch?v=yppn9tMtFr0">
+            <img class="music-link__logo" src="youtube.svg" alt="youtube">
+            <button class="music-link__button" data-id="youtube" data-url="https://www.youtube.com/watch?v=yppn9tMtFr0">Escoltar</button>
+          </div -->
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script>
+        function redirect(url, platform) {
+          var callback = function() {
+            if (typeof(url) != 'undefined') {
+              window.location = url;
+            }
+          };
+          gtag('event', platform, {
+            'event_callback': callback
+          });
+        }
+
+        $('.music-link__button').on('click', function(e) {
+          redirect($(this).attr('data-url'), $(this).attr('data-id'));
+        })
+
+        $('.music-link__container').on('click', function(e) {
+          redirect($(this).attr('data-url'), $(this).attr('data-id'));
+        })
+      </script>
+</body>
+
+</html>
