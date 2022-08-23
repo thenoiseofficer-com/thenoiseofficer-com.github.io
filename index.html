@@ -23,13 +23,33 @@
       padding: 0 1em;
     }
 
-    #content {
+    .container {
+      left: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      position: fixed;
+      overflow: auto;
+      background-color: #1f1f1f;
+      height: 100vh;
+    }
+
+    .content {
       position: relative;
       padding: 0.5em;
       z-index: 5555;
       width: 100%;
       margin: 0 auto 1em auto;
       max-width: 400px;
+    }
+
+    .artwork {
+      border-radius: 5px;
+    }
+
+    .platforms-list__container {
+      width: 100%;
+      margin-bottom: 1em;
     }
 
     .platform-list {
@@ -56,11 +76,6 @@
 
     }
 
-    .platforms-list__container {
-      width: 100%;
-      margin-bottom: 1em;
-    }
-
     @media(max-width:1100px) {
       .platforms-list__name {
         font-size: 1.1em;
@@ -71,6 +86,13 @@
       .platforms-list__name {
         font-size: 1em;
       }
+    }
+
+    .music-link__container {
+      border-bottom: unset;
+      border: 2px solid #fff;
+      background: #fff;
+      margin-top: 0.5em;
     }
 
     .music-link__container {
@@ -109,28 +131,6 @@
       border: 1px solid transparent;
       color: #fff;
     }
-
-    #user-artwork {
-      border-radius: 5px;
-    }
-
-    #container {
-      left: 0;
-      right: 0;
-      width: 100%;
-      text-align: center;
-      position: fixed;
-      overflow: auto;
-      background-color: #1f1f1f;
-      height: 100vh;
-    }
-
-    .music-link__container {
-      border-bottom: unset;
-      border: 2px solid #fff;
-      background: #fff;
-      margin-top: 0.5em;
-    }
   </style>
 
   <script>
@@ -141,9 +141,9 @@
 </head>
 
 <body>
-  <div id="container" class="container">
-    <div id="content">
-      <img id="user-artwork" src="timemachine.jpg" style="display:block;width:100%;max-width:400px">
+  <div class="container">
+    <div class="content">
+      <img class="artwork" src="timemachine.jpg" style="display:block;width:100%;max-width:400px">
       <div class="platforms-list__container">
         <div class="platform-list">
           <div class="music-link__container" onclick="redirect('https://open.spotify.com/artist/2UuL7R7wCO7DQVWNc5o93k?si=waMrfhCsQzKvcO_mufdsJw')">
