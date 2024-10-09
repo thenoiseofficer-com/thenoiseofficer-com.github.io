@@ -13,149 +13,25 @@
       box-sizing: border-box;
     }
 
-    body {
-      overflow-x: hidden;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
-      padding: 0 1em;
-    }
-
     .container {
-      left: 0;
-      right: 0;
       width: 100%;
       text-align: center;
-      position: fixed;
-      overflow: auto;
-      background-color: #1f1f1f;
-      height: 100vh;
     }
 
-    .content {
-      position: relative;
-      padding: 0.5em;
-      z-index: 5555;
+    .flyer {
       width: 100%;
-      margin: 0 auto 1em auto;
-      max-width: 400px;
-    }
-
-    .artwork {
-      border-radius: 5px;
-    }
-
-    .platforms-list__container {
-      width: 100%;
-      margin-bottom: 1em;
-    }
-
-    .platform-list {
-      width: 100%;
-      margin: 0 auto;
-      overflow: hidden;
-      box-shadow: none;
-      background: none;
-    }
-
-    .platforms-list__name {
-      padding: 1.2em 1.5em;
-      letter-spacing: 1px;
-      text-align: center;
-      font-family: 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-      width: 100%;
-      max-width: 40em;
-      font-size: 1em;
-      color: #fff;
-      border-radius: 0;
-      background: none;
-      font-weight: bold;
-      margin: 0.5em 0;
-
-    }
-
-    @media(max-width:1100px) {
-      .platforms-list__name {
-        font-size: 1.1em;
-      }
-    }
-
-    @media(max-width:700px) {
-      .platforms-list__name {
-        font-size: 1em;
-      }
-    }
-
-    .music-link__container {
-      border-bottom: unset;
-      border: 2px solid #fff;
-      background: #fff;
-      margin-top: 0.5em;
-    }
-
-    .music-link__container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7em 1em;
-      border-top: 1px solid #f6f6f6;
-      border-bottom: 1px solid #f6f6f6;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .music-link__container:last-child {
-      border-bottom: none;
-    }
-
-    .music-link__logo {
-      float: left;
-      width: 7em;
-    }
-
-    .music-link__button {
-      float: right;
-      padding: 0.5em 1em;
-      background: #fff;
-      color: rgb(97 97 97);
-      border: 1px solid rgb(218 218 218);
-      font-weight: bold;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-
-    .music-link__button:hover {
-      background: rgb(60, 60, 60);
-      border: 1px solid transparent;
-      color: #fff;
+      max-width: 1024px;
     }
   </style>
 
-  <script>
-    function redirect(url, platform) {
-      window.location = url;
-    }
-  </script>
 </head>
 
 <body>
   <div class="container">
-    <div class="content">
-      <img class="artwork" src="electronicstorm.jpg" style="display:block;width:100%;max-width:400px">
-      <div class="platforms-list__container">
-        <div class="platform-list">
-          <div class="music-link__container" onclick="redirect('https://open.spotify.com/track/1y3VDdjM6ckABOuSYNSCQS?si=7e7e3fa4c6e340bb')">
-            <img class="music-link__logo" src="spotify.svg" alt="spotify">
-            <button class="music-link__button" onclick="redirect('https://open.spotify.com/track/1y3VDdjM6ckABOuSYNSCQS?si=7e7e3fa4c6e340bb')">&#9658; Play</button>
-          </div>
-          <div class="music-link__container" onclick="redirect('https://music.apple.com/us/album/electronic-storm/1737683091?i=1737683092')">
-            <img class="music-link__logo" src="apple-music.svg" alt="apple-music">
-            <button class="music-link__button" onclick="redirect('https://music.apple.com/us/album/electronic-storm/1737683091?i=1737683092')">&#9658; Play</button>
-          </div>
-        </div>
-      </div>
+      <a href="https://www.youtube.com/shorts/Kd80itqnG0M">
+        <img class="flyer" src="visual.jpeg" alt="Makina Remember">
+      </a>
+  </div>
 </body>
 
 </html>
