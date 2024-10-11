@@ -15,27 +15,60 @@
     <title>Noise Officer</title>
     <meta name="description" content="Makina & Hardstyle music by Arnau Llop.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: normal;
+        margin: 10px;
+      }
+
+      .limited {
+        width: 100%;
+        max-width: 720px;
       }
 
       .container {
-        width: 100%;
         text-align: center;
+        display: block;
+        float: none;
+        justify-content: space-between;
+        padding-bottom: 20px;
       }
 
       .flyer {
         width: 100%;
-        max-width: 1024px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <img class="flyer" src="visual.jpeg" alt="Makina Remember">
+    <div class="limited">
+      <div class="container">
+        <img class="flyer" src="visual.jpeg" alt="Makina Remember">
+      </div>
+      <div class="container">
+        <a href="https://www.tiktok.com/@thenoiseofficer"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="https://instagram.com/thenoiseofficer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="https://open.spotify.com/playlist/4H6iQJfcDTpXgLBbdXSZ22?si=58e013e9f1d44f5c"><i class="fa-brands fa-spotify"></i> Spotify</a>
+      </div>
     </div>
   </body>
 </html>
