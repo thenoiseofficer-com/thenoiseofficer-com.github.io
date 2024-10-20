@@ -72,19 +72,23 @@
       <div class="container">
         <iframe id="spotify-widget" src="https://open.spotify.com/embed/playlist/4H6iQJfcDTpXgLBbdXSZ22?utm_source=generator&theme=0" width="100%" height="720px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         <script>
+          firstInteraction = true;
+
           const childWindow = document.getElementById('spotify-widget').contentWindow;
           window.addEventListener('message', message => {
             if (message.source !== childWindow) {
                 return; // Skip message in this event listener
             }
 
-            if(message.data.type == "playback_update") {
-              gtag('event', 'spotify', {
+            if(message.data.type == "playback_update" && firstInteraction) {
+              gtag('event', 'spotify_interaction', {
                   'event_category': 'Spotify',
-                  'event_label': "Player updated"
+                  'event_label': "Player interaction"
               });
 
-              console.log("Player updated");
+              console.log("Player interaction");
+
+              firstInteraction = false;
             }
           });
         </script>
